@@ -54,11 +54,11 @@ myMelt <- melt(finalSet, id = c("Subject", "Activity"),
 cleanData <- dcast(myMelt, Subject + Activity ~ variable, mean)
 
 # Check if file exists. If it does, delete it.
-if (file.exists("./cleanData.csv")) { unlink("./cleanData.csv") }
+if (file.exists("./cleanData.txt")) { unlink("./cleanData.txt") }
 
 # Write cleanData and put under current directory
 
-write.table(cleanData, file="./cleanData.csv")
+write.table(cleanData, file="./cleanData.txt", row.name=FALSE)
 
 
 
